@@ -1,0 +1,31 @@
+<nav class="subnav">
+  <ul class="nav">
+      <li class="nav-item">
+          <a  routerLink='/categorie/createCategorie' class="nav-link active" href="#">Create Category</a>
+      </li>
+      <li class="nav-item">
+          <a  routerLink='/categorie/listCategorie' class="nav-link" href="#">Liste Category</a>
+      </li>
+  </ul>
+</nav>
+<div class="centre">
+<h1> CREATE NEW CATEGORY</h1>
+  <form clrForm  class="clr-form clr-form-compact">
+      
+      <div class="clr-form-control clr-row">
+          <label for="example" class="clr-control-label clr-col-12 clr-col-md-4">Nom</label>
+          <div class="clr-control-container clr-col-12 clr-col-md-8">
+              <div class="clr-input-wrapper">
+                  <input type="text" id="example" [(ngModel)]="categorie.nomCategorie" name="nomCategorie" required placeholder="Nom" class="clr-input"  >
+                 
+              </div>
+              <span class="clr-subtext">Helper Text</span>
+          </div>
+      </div>
+
+  </form>
+  <div class="button">
+          <button type="submit" (click)="onSubmit()" class="btn btn-info-outline">Valider</button>
+          <button class="btn btn-warning-outline">Annuler</button>
+  </div>
+</div>

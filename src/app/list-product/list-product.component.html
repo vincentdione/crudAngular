@@ -1,0 +1,32 @@
+
+<nav class="subnav">
+  <ul class="nav">
+      <li class="nav-item">
+          <a  routerLink='/product/createProduct' class="nav-link " href="#">Create Product</a>
+      </li>
+      <li class="nav-item">
+          <a  routerLink='/product/listProduct' class="nav-link active" href="#">Liste Product</a>
+      </li>
+  </ul>
+</nav>
+
+<div>
+  <h1> PRODUCTS LIST</h1>
+  <clr-datagrid>
+      <clr-dg-column>Code</clr-dg-column>
+      <clr-dg-column>Nom</clr-dg-column>
+      <clr-dg-column>Type</clr-dg-column>
+      <clr-dg-column>Date</clr-dg-column>
+      <clr-dg-column>Actions</clr-dg-column>
+  
+      <clr-dg-row ng-click="count = count + 1" *ngFor =" let produit of listProduit">
+          <clr-dg-cell>{{produit.codeProduit}}</clr-dg-cell>
+          <clr-dg-cell>{{produit.nomProduit}}</clr-dg-cell>
+          <clr-dg-cell>{{produit.typeProduit}}</clr-dg-cell>
+          <clr-dg-cell>{{produit.dateProduit | date: 'dd/MM/yyyy'}}</clr-dg-cell>
+          <clr-dg-cell> <a  class="btn btn-success">details</a> <a class="btn btn-outline">update</a> <a class="btn btn-danger" (click)="onDelete(produit)" >delete</a> </clr-dg-cell>
+      </clr-dg-row>
+  
+      <clr-dg-footer>{{listProduit.length}} products</clr-dg-footer>
+  </clr-datagrid>
+</div>

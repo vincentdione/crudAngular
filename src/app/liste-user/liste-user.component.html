@@ -1,0 +1,58 @@
+
+
+<nav class="subnav">
+    <ul class="nav">
+        <li class="nav-item">
+            <a  routerLink='/user/createUser' class="nav-link " href="#">Create user</a>
+        </li>
+        <li class="nav-item">
+            <a  routerLink='/user/listeUser' class="nav-link active" href="#">Liste user</a>
+        </li>
+    </ul>
+</nav>
+
+<div>
+    <h1> USERS LIST</h1>
+    <clr-datagrid >
+        <clr-dg-column>Nom</clr-dg-column>
+        <clr-dg-column>Prenom</clr-dg-column>
+        <clr-dg-column>Telephone</clr-dg-column>
+        <clr-dg-column>Email </clr-dg-column>
+        <clr-dg-column>Action</clr-dg-column>
+    
+        <clr-dg-row *ngFor =" let user of listUser">
+            <clr-dg-cell>{{user.id}}</clr-dg-cell>
+            <clr-dg-cell>{{user.prenom}}</clr-dg-cell>
+            <clr-dg-cell>{{user.telephone}}</clr-dg-cell>
+            <clr-dg-cell>{{user.email}}</clr-dg-cell>
+            <clr-dg-cell> <a  class="btn btn-success" (click)="isModalVisible = true" >details</a> <a class="btn btn-outline" (click)="onUpdate(user)" >update</a> <a class="btn btn-danger" (click)="onDelete(user)" >delete</a> </clr-dg-cell>
+        </clr-dg-row>
+    
+        <clr-dg-footer>{{listUser.length}} users</clr-dg-footer>
+    </clr-datagrid>
+</div>
+
+<clr-modal [(clrModalOpen)]="isModalVisible">
+        <h3 class="modal-title">Detail user</h3>
+        <div class="modal-body">
+            <form >
+                <div class="form-group">
+                        <span class="label label-blue">ID</span>
+                        <label> </label>
+
+                </div>
+                   
+                    <span class="label label-blue">ID</span>
+                    <span class="label label-blue">ID</span>
+                    <span class="label label-blue">ID</span>
+                    
+                    
+            </form>
+
+            
+
+        </div>
+        <div class="modal-footer">
+         
+        </div>
+      </clr-modal>

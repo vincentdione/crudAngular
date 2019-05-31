@@ -1,0 +1,35 @@
+
+
+<nav class="subnav">
+  <ul class="nav">
+      <li class="nav-item">
+          <a  routerLink='/categorie/createCategorie' class="nav-link " href="#">Create category</a>
+      </li>
+      <li class="nav-item">
+          <a  routerLink='/categorie/listCategorie' class="nav-link active" href="#">Liste category</a>
+      </li>
+  </ul>
+</nav>
+
+<div>
+  <h1> CATEGORIES LIST</h1>
+  <clr-datagrid>
+      <clr-dg-column>Nom</clr-dg-column>
+      <clr-dg-column>Prenom</clr-dg-column>
+      <clr-dg-column>Telephone</clr-dg-column>
+      <clr-dg-column>Telephone</clr-dg-column>
+  
+      <clr-dg-row *ngFor =" let user of listUser">
+          <clr-dg-cell>{{user.id}}</clr-dg-cell>
+          <clr-dg-cell>{{user.prenom}}</clr-dg-cell>
+          <clr-dg-cell>{{user.telephone}}</clr-dg-cell>
+          <clr-dg-cell> <a href="" class="btn btn-outline">update</a> </clr-dg-cell>
+      </clr-dg-row>
+      <clr-dg-footer>{{listUser.length}} users</clr-dg-footer>
+  </clr-datagrid>
+</div>
+<div class="btn-group btn-primary">
+    <button class="btn">Favorite</button>
+    <button class="btn btn-success">Add</button>
+    <button class="btn btn-danger">Delete</button>
+</div>

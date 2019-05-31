@@ -1,0 +1,15 @@
+/* You can add global styles to this file, and also import other style files */
+.centre{
+    margin: 0 auto;
+    height: 500px;
+    width: 600px;
+}
+
+h1 {
+    color: #004A70;
+    text-align: center;
+}
+
+input {
+    width: 300px;
+}

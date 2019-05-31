@@ -1,0 +1,28 @@
+<div class="centre">
+    <h1> UPDATE USER</h1>
+    <form clrForm>
+        <clr-input-container>
+            <label>Id</label>
+            <input clrInput type="text" [(ngModel)]="user.id" name="id" />
+        </clr-input-container>
+        <clr-input-container>
+            <label>Nom</label>
+            <input clrInput type="text" [(ngModel)]="user.nom" name="nom" />
+        </clr-input-container>
+        <clr-input-container>
+            <label>Prenom</label>
+            <input clrInput type="text" [(ngModel)]="user.prenom" name="prenom" />
+        </clr-input-container>
+        <clr-input-container>
+            <label>Telephone</label>
+            <input clrInput type="text" [(ngModel)]="user.telephone" name="telephone" />
+        </clr-input-container>
+        <clr-input-container>
+            <label>Email</label>
+            <input clrInput type="text" [(ngModel)]="user.email" name="email" />
+        </clr-input-container>
+        <div>
+          <button class="btn btn-outline" (click)="onUpdate(user)" >update</button>
+        </div>
+    </form>
+  </div>

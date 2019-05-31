@@ -1,0 +1,59 @@
+<nav class="subnav">
+    <ul class="nav">
+        <li class="nav-item">
+            <a  routerLink='/user/createUser' class="nav-link active" href="#">Create user</a>
+        </li>
+        <li class="nav-item">
+            <a  routerLink='/user/listeUser' class="nav-link" href="#">Liste user</a>
+        </li>
+    </ul>
+</nav>
+<div class="centre">
+  <h1> CREATE NEW USER</h1>
+    <form clrForm    class="clr-form clr-form-compact">
+        <div class="clr-form-control clr-row">
+            <label for="example" class="clr-control-label clr-col-12 clr-col-md-4">Nom</label>
+            <div class="clr-control-container clr-col-12 clr-col-md-8">
+                <div class="clr-input-wrapper">
+                    <input type="text" id="example" [(ngModel)]="user.nom" name="nom" required placeholder="Nom" class="clr-input">
+                   
+                </div>
+                <span class="clr-subtext">Helper Text</span>
+            </div>
+        </div>
+        <div class="clr-form-control clr-row">
+            <label for="example" class="clr-control-label clr-col-12 clr-col-md-4">Prenom</label>
+            <div class="clr-control-container clr-col-12 clr-col-md-8">
+                <div class="clr-input-wrapper">
+                    <input type="text" id="example" [(ngModel)]="user.prenom" name="prenom" required placeholder="Prenom" class="clr-input"  >
+                   
+                </div>
+                <span class="clr-subtext">Helper Text</span>
+            </div>
+        </div>
+        <div class="clr-form-control clr-row">
+            <label for="example" class="clr-control-label clr-col-12 clr-col-md-4">Telephone</label>
+            <div class="clr-control-container clr-col-12 clr-col-md-8">
+                <div class="clr-input-wrapper">
+                    <input type="tel" id="example" [(ngModel)]="user.telephone" name="telephone" required placeholder="Telephone" class="clr-input" >
+                 
+                </div>
+                <span class="clr-subtext">Helper Text</span>
+            </div>
+        </div>
+        <div class="clr-form-control clr-row">
+            <label for="email" class="clr-control-label clr-col-12 clr-col-md-4">Email</label>
+            <div class="clr-control-container clr-col-12 clr-col-md-8">
+                <div class="clr-input-wrapper">
+                    <input type="email" id="email" [(ngModel)]="user.email" name="email" required placeholder="Email" class="clr-input" >
+                   
+                </div>
+                <span  class="clr-subtext">Helper Text</span>
+            </div>
+        </div>
+    </form>
+    <div class="button">
+            <button type="submit" (click)="onSubmit()" class="btn btn-info-outline">Valider</button>
+            <button class="btn btn-warning-outline">Annuler</button>
+    </div>
+</div>

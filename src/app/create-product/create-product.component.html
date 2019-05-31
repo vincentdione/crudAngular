@@ -1,0 +1,74 @@
+<nav class="subnav">
+  <ul class="nav">
+      <li class="nav-item">
+          <a  routerLink='/product/createProduct' class="nav-link active" href="#">Create Product</a>
+      </li>
+      <li class="nav-item">
+          <a  routerLink='/product/listProduct' class="nav-link" href="#">Liste Product</a>
+      </li>
+  </ul>
+</nav>
+<div class="centre">
+<h1> CREATE NEW PRODUCT</h1>
+  <form clrForm  class="clr-form clr-form-compact">
+      <div class="clr-form-control clr-row">
+          <label for="example" class="clr-control-label clr-col-12 clr-col-md-4">Code</label>
+          <div class="clr-control-container clr-col-12 clr-col-md-8">
+              <div class="clr-input-wrapper">
+                  <input type="text" id="example" [(ngModel)]="produit.codeProduit" name="codeProduit" required placeholder="Code" class="clr-input">
+                 
+              </div>
+              <span class="clr-subtext">Helper Text</span>
+          </div>
+      </div>
+      <div class="clr-form-control clr-row">
+          <label for="example" class="clr-control-label clr-col-12 clr-col-md-4">Nom</label>
+          <div class="clr-control-container clr-col-12 clr-col-md-8">
+              <div class="clr-input-wrapper">
+                  <input type="text" id="example" [(ngModel)]="produit.nomProduit" name="nomProduit" required placeholder="Nom" class="clr-input"  >
+                 
+              </div>
+              <span class="clr-subtext">Helper Text</span>
+          </div>
+      </div>
+
+      <div class="clr-form-control clr-row">
+          <label for="example" class="clr-control-label clr-col-12 clr-col-md-4">Type</label>
+          <div class="clr-control-container clr-col-12 clr-col-md-8">
+      <select clrSelect name="typeProduit" [(ngModel)]="produit.typeProduit">
+        <option value="Ordinateurs">Ordinateurs</option>
+        <option value="Cosmetiques">Cosmetiques</option>
+        <option value="Electronique">Electronique</option>
+        <option value="Vetements">Vetements</option>
+      </select>
+      <span class="clr-subtext">Helper Text</span>
+    </div>
+    </div>
+
+
+      <div class="clr-form-control clr-row">
+          <label for="email" class="clr-control-label clr-col-12 clr-col-md-4">Date</label>
+          <div class="clr-control-container clr-col-12 clr-col-md-8">
+              <form clrForm clrLayout="vertical">
+                  <input type="date"   name="dateProduit" [(ngModel)]="produit.dateProduit">
+                </form>
+              <span  class="clr-subtext">Helper Text</span>
+          </div>
+      </div>
+
+      <div class="clr-form-control clr-row" >
+            <label for="example" class="clr-control-label clr-col-12 clr-col-md-4">categorie</label>
+            <div class="clr-control-container clr-col-12 clr-col-md-8">
+        <select clrSelect name="produit.categorie" [(ngModel)]="produit.categorie" >
+          <option *ngFor="let categorie of listeCategorie" value="categorie.nomCategorie">{{categorie.nomCategorie}}</option>
+        </select>
+        <span class="clr-subtext">Helper Text</span>
+      </div>
+      </div>
+
+  </form>
+  <div class="button">
+          <button type="submit" (click)="onSubmit()" class="btn btn-info-outline">Valider</button>
+          <button class="btn btn-warning-outline">Annuler</button>
+  </div>
+</div>
